@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "name": "HTML 5.0",
+    "level": 90,
+    "img": "html.svg",
+    "bgColor": "#E34F26"
+  },
+  {
+    "id": 2,
+    "name": "CSS 3.0",
+    "level": 90,
+    "img": "css.svg",
+    "bgColor": "#1B73BA"
+  },
+  {
+    "id": 3,
+    "name": "Sass",
+    "level": 50,
+    "img": "sass.svg",
+    "bgColor": "#CF649A"
+  },
+  {
+    "id": 4,
+    "name": "Javascript",
+    "level": 85,
+    "img": "js.svg",
+    "bgColor": "#F0DB4F"
+  },
+  {
+    "id": 5,
+    "name": "php",
+    "level": 75,
+    "img": "php.svg",
+    "bgColor": "#8993BE"
+  },
+  {
+    "id": 6,
+    "name": "React.js",
+    "level": 70,
+    "img": "react.svg",
+    "bgColor": "#61DAFB"
+  },
+  {
+    "id": 7,
+    "name": "Node.js",
+    "level": 70,
+    "img": "node.svg",
+    "bgColor": "#8CC84B"
+  },
+  {
+    "id": 8,
+    "name": "Wordpress",
+    "level": 65,
+    "img": "wp.svg",
+    "bgColor": "#21759B"
+  },
+  {
+    "id": 9,
+    "name": "jQuery",
+    "level": 50,
+    "img": "jquery.svg",
+    "bgColor": "#1266A9"
+  },
+  {
+    "id": 10,
+    "name": "MongoDB",
+    "level": 70,
+    "img": "mongodb.svg",
+    "bgColor": "#599636"
+  },
+  {
+    "id": 11,
+    "name": "MySQL",
+    "level": 75,
+    "img": "mysql.svg",
+    "bgColor": "#00546B"
+  }
+]

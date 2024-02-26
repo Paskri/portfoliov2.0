@@ -1,0 +1,49 @@
+.banner-container {
+  padding: 20px 20px 0 20px;
+  width: 100%;
+  position: relative;
+  color: black;
+  /*background: linear-gradient(#00546b, #003847);*/
+  margin-top: 0;
+}
+.banner-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  transition: 0.25s;
+  transform-style: preserve-3d;
+}
+.pk-img {
+  height: 100%;
+  object-fit: cover;
+}
+.banner-text {
+  font-size: 1.5rem;
+  text-align: center;
+  letter-spacing: -1px;
+}
+@media screen and (min-width: 680px) {
+  .banner-text {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 890px) {
+  .banner-text {
+    font-size: 2rem;
+  }
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+#canvas2 {
+  z-index: 0;
+  filter: blur(1px);
+}
+.rain-container {
+  position: relative;
+}

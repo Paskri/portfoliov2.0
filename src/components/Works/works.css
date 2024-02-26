@@ -1,0 +1,9 @@
+.works-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+#works {
+  margin: 0;
+  background-color: #e2f2ff;
+}

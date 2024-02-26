@@ -1,0 +1,62 @@
+[
+  {
+    "name": "HTML 5.0",
+    "level": 90,
+    "icon": "fa-brands fa-html5"
+  },
+  {
+    "name": "CSS 3.0",
+    "level": 90,
+    "icon": "fa-brands fa-css3"
+  },
+  {
+    "name": "Sass",
+    "level": 50,
+    "icon": "fa-brands fa-sass"
+  },
+  {
+    "name": "Javascript",
+    "level": 85,
+    "icon": "fa-brands fa-square-js"
+  },
+  {
+    "name": "php",
+    "level": 75,
+    "icon": "fa-brands fa-php"
+  },
+  {
+    "name": "React.js",
+    "level": 70,
+    "icon": "fa-brands fa-react"
+  },
+  {
+    "name": "Node.js",
+    "level": 70,
+    "icon": "fa-brands fa-node-js"
+  },
+  {
+    "name": "Express",
+    "level": 70,
+    "icon": "fa-brands fa-etsy"
+  },
+  {
+    "name": "Wordpress",
+    "level": 65,
+    "icon": "fa-brands fa-wordpress-simple"
+  },
+  {
+    "name": "Jquery",
+    "level": 50,
+    "icon": "fa-brands fa-js"
+  },
+  {
+    "name": "MongoDB",
+    "level": 70,
+    "icon": "fa-brands fa-envira"
+  },
+  {
+    "name": "SQL",
+    "level": 75,
+    "icon": "fa-solid fa-database"
+  }
+]

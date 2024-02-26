@@ -1,0 +1,40 @@
+{
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Pascal Krieg, Developpeur Web indépendant",
+    "description": "Création de site internet, maintenance, correction de bug, ajout de fonctionnalités",
+    "image": [
+        "",
+        ""
+    ],
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "26 rue César Julien",
+        "addressLocality": "Strasbourg",
+        "postalCode": "67200",
+        "addressCountry": {
+            "@type": "Country",
+            "name": "France"
+        }
+    },
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 48.58087,
+        "longitude": 7.70392
+    },
+    "url": "https://krieg.fr",
+    "openingHoursSpecification": [
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+            ],
+            "opens": "09:00",
+            "closes": "17:00"
+        }
+    ]
+}

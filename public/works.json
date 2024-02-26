@@ -1,0 +1,195 @@
+[
+  {
+    "id": 1,
+    "title": "Booki",
+    "projectTitle": "Créer la page d'accueil d'une agence de voyage avec HTML & CSS",
+    "logo": "booki/booki-logo",
+    "logoSize": [191, 60],
+    "background": "booki/booki-background",
+    "tags": "Intégration, HTML, CSS",
+    "desktop": [{ "title": "Acceuil", "img": "booki/booki-desktop" }],
+    "mobile": [{ "title": "Acceuil", "img": "booki/booki-mobile" }],
+    "keywords": "Frontend,intégration,HTML,CSS,Figma,Github,W3C",
+    "description": "Créez la page d'accueil d'une agence de voyage avec HTML & CSS",
+    "skills": [
+      "Installer un environnement de développement front-end",
+      "Intégrer du contenu conformément à une maquette avec HTML et CSS",
+      "Implémenter une interface responsive avec HTML et CSS",
+      "Versionner son projet avec Git et Github"
+    ],
+    "comments": [
+      "Projet 2 de la formation OpenClassRooms - Developpeur Web",
+      "Révision et approfondissement de notions déjà en grande partie acquises. ",
+      "Aucune difficulté insurmontable autrement que par la pratique et la lecture attentive des documentations."
+    ],
+    "code": "https://github.com/Paskri/OCR---Booki",
+    "demo": "https://paskri.github.io/OCR---Booki/"
+  },
+  {
+    "id": 2,
+    "title": "Sophie Bluel Architecte d'intérieur",
+    "projectTitle": "Créer une page web dynamique avec JavaScript",
+    "logo": "sophiebluel/sb-logo",
+    "logoSize": [304, 60],
+    "background": "sophiebluel/sb-background",
+    "tags": "HTML, CSS, Javascript",
+    "desktop": [
+      { "title": "Acceuil", "img": "sophiebluel/sb-desktop" },
+      { "title": "Login", "img": "sophiebluel/sb-desktop1" },
+      { "title": "Gallerie", "img": "sophiebluel/sb-desktop2" },
+      { "title": "Ajout", "img": "sophiebluel/sb-desktop3" }
+    ],
+    "mobile": [],
+    "keywords": "Frontend,intégration,HTML,CSS,Javascript,Figma",
+    "description": "La mission: Créez une page web dynamique avec JavaScript",
+    "skills": [
+      "Récupérer les données utilisateurs dans le JavaScript via des formulaires",
+      "Manipuler les éléments du DOM avec JavaScript",
+      "Gérer les événements utilisateurs avec JavaScript: Filtres, connexion, envoi de données, API"
+    ],
+    "comments": [
+      "Projet 3 de la formation OpenClassRooms - Developpeur Web",
+      "Révision et approfondissement de notions déjà en grande partie acquises. ",
+      "Aucune difficulté insurmontable autrement que par la pratique et la lecture attentive des documentations. "
+    ],
+    "code": "https://github.com/Paskri/OCR---Portfolio-architecte-sophie-bluel",
+    "demo": ""
+  },
+  {
+    "id": 3,
+    "title": "Menu Maker by Qwenta",
+    "projectTitle": "Planifier le développement du site de votre client",
+    "logo": "menumaker/mm-logo",
+    "logoSize": [169, 60],
+    "background": "menumaker/mm-background",
+    "tags": "Gestion de projet",
+    "desktop": [
+      { "title": "Solutions", "img": "menumaker/mm-desktop" },
+      { "title": "Planification", "img": "menumaker/mm-desktop1" },
+      { "title": "Veille", "img": "menumaker/mm-desktop2" }
+    ],
+    "mobile": [],
+    "keywords": "Gestion de projet,Kanban,Veille technologique,Trello",
+    "description": "La mission : Planifiez le développement du site de votre client",
+    "skills": [
+      "Suivre le déroulement du projet grâce à un outil de gestion de projet",
+      "Rédiger les spécifications techniques d'un projet web à partir de besoins fonctionnels",
+      "Découper une fonctionnalités en tâches pour préparer le développement",
+      "Présenter la solution technique",
+      "Mettre en place une méthode de veille technologique"
+    ],
+    "comments": [
+      "Ce quatrième projet de la formation OpenClassRooms de Developpeur Web s'annonçait de prime abord trop théorique et fastidieux. Il m'a obligé à découvrir un grand nombre de sujets rattachés au developpement. ",
+      "En effet, Mettre en place une solution technique complète demande d'avoir une vision assez large de tous les langages, des frameworks/ librairies existantes, des APIs, des hébergeurs et de leurs offres, et enfin, de la sécurité et de la réglementation en vigueur. Aussi, j'ai passé beaucoup de temps, en me perdant parfois, à mettre en place une solution de veille technologique complète.",
+      "La principale difficulté que j'ai rencontré lors de la réalisation de ce projet fût la profusion d'offres commerciales qui noyaient les informations essentielles. J'ai ainsi dû opérer un tri conséquent  pour trouver des sources fiables et dignes de confiance.",
+      "Au final, j'ai acquis une vision d'ensemble des solutions possibles et cela m'a permis de faire des choix techniques pertinents."
+    ],
+    "code": "",
+    "demo": ""
+  },
+  {
+    "id": 4,
+    "title": "Nina Carducci, Photographe",
+    "projectTitle": "Débugger et optimiser un site de photographe",
+    "logo": "ninacarducci/nc-logo",
+    "logoSize": [222, 60],
+    "background": "ninacarducci/nc-background",
+    "tags": "HTML, CSS, Javascript",
+    "desktop": [
+      { "title": "Acceuil", "img": "ninacarducci/nc-desktop" },
+      { "title": "Audit LightHouse", "img": "ninacarducci/nc-desktop1" },
+      { "title": "Audit Waves", "img": "ninacarducci/nc-desktop2" }
+    ],
+    "mobile": [{ "title": "Acceuil", "img": "ninacarducci/nc-mobile" }],
+    "keywords": "Waves,LightHouse,HeadingMaps, Schema.org,SEO",
+    "description": "Texte à écrire pour chaque élément qui devra décrire le projet, les compétences acquises et les éventuelles difficultés rencontrées lors du codage",
+    "skills": [
+      "Optimiser les performances d’un site web",
+      "Débugger un site web grâce aux Chrome DevTools",
+      "Rédiger un cahier de recette pour tester un site"
+    ],
+    "comments": [
+      "Projet 5 de la formation OpenClassRooms de développeur web.",
+      "Le site original comportait pratiquement toutes les erreurs et mauvaises pratiques possibles ce qui en fait le parfait cas d'école. Un gros travail de nettoyage s'imposait et j'avais à cœur de tout mettre à plat pour non seulement obtenir une note quasi parfaite sur les outils d'audit mais également pour découvrir toutes les bonnes pratiques qui permettent d'obtenir le meilleur référencement possible et la meilleure expérience utilisateur.",
+      "Absolument tout était sans dessus dessous et il fût difficile de tout démêler. HTML, CSS, jQuery, Bootstrap, css, etc. tout a été passé en revue pour être soit supprimé et recodé, soit remis en ordre.",
+      "Ce travail fastidieux mais néanmoins passionnant a été très enrichissant car il m'a permis d'ouvrir les yeux sur les erreurs les plus courantes afin de savoir comment bien coder un site de A à Z. Avec ce bagage, il m'est plus aisé d'envisager en amont, avant même la première ligne de code, ce que je dois ou ne dois surtout pas faire."
+    ],
+    "code": "https://github.com/Paskri/ninacarducci",
+    "demo": "https://paskri.github.io/ninacarducci/"
+  },
+  {
+    "id": 5,
+    "title": "Kasa",
+    "projectTitle": "Créer une application web de location immobilière avec React",
+    "logo": "kasa/kasa-logo",
+    "logoSize": [185, 60],
+    "background": "kasa/kasa-background",
+    "tags": "Frontend, React",
+    "desktop": [
+      { "title": "Accueil", "img": "kasa/kasa-desktop" },
+      { "title": "Logement", "img": "kasa/kasa-desktop1" },
+      { "title": "À propos", "img": "kasa/kasa-desktop2" },
+      { "title": "404", "img": "kasa/kasa-desktop3" }
+    ],
+    "mobile": [
+      { "title": "Accueil", "img": "kasa/kasa-mobile" },
+      { "title": "Logement", "img": "kasa/kasa-mobile1" },
+      { "title": "À propos", "img": "kasa/kasa-mobile2" },
+      { "title": "404", "img": "kasa/kasa-mobile3" }
+    ],
+    "keywords": "Frontend, React, Figma",
+    "description": "Créer une application web de location immobilière avec React",
+    "skills": [
+      "Initialiser une application avec Create React App",
+      "Développer des éléments de l'interface d'un site web grâce à des composants React",
+      "Configurer la navigation entre les pages de l'application avec React Router",
+      "Mettre en œuvre des animations CSS"
+    ],
+    "comments": [
+      "Dans Kasa, projet 6 de la formation OpenClassRooms de développeur Web, on attaque enfin le cœur de la formation par l'apprentissage du framework frontend React. Je dois dire que je n'ai pas été déçu par la richesse et la pertinence de l'approche proposé par cette librairie Javascript.",
+      "Parmi les épreuves que j'ai dû affronter, je pense que les hooks étaient certainement l'apprentissage le plus subtil. Ce n'était pas leur fonctionnement qui m'a posé problème mais plutôt de savoir à quel moment et dans quel cadre il était judicieux de les utiliser.",
+      "Loin de balayer toutes les possibilités offertes par React, ce projet à ouvert des portes vers de nouvelles découvertes que j'ai mis en œuvre dans le présent portfolio. (useRef, useEffect, useForm, librairies additionnelles, etc.)",
+      "Pour conclure, ce projet m'a demandé de mobiliser tous les savoirs acquis jusque là pour aller encore plus loin."
+    ],
+
+    "code": "https://github.com/Paskri/OCR--Kasa",
+    "demo": ""
+  },
+  {
+    "id": 6,
+    "title": "Mon Vieux Grimoire",
+    "projectTitle": "Développer le back-end d'un site de notation de livres",
+    "logo": "monvieuxgrimoire/mvg-logo",
+    "logoSize": [171, 60],
+    "background": "monvieuxgrimoire/mvg-background",
+    "tags": "Node, Express, MongoDB",
+    "desktop": [
+      { "title": "Acceuil", "img": "monvieuxgrimoire/mvg-desktop" },
+      { "title": "Connexion", "img": "monvieuxgrimoire/mvg-desktop1" },
+      { "title": "Ajouter livre", "img": "monvieuxgrimoire/mvg-desktop2" },
+      { "title": "Page livre", "img": "monvieuxgrimoire/mvg-desktop3" },
+      { "title": "Modifier", "img": "monvieuxgrimoire/mvg-desktop4" }
+    ],
+    "mobile": [
+      { "title": "Acceuil", "img": "monvieuxgrimoire/mvg-mobile" },
+      { "title": "Connexion", "img": "monvieuxgrimoire/mvg-mobile1" },
+      { "title": "Ajouter livre", "img": "monvieuxgrimoire/mvg-mobile2" },
+      { "title": "Page livre", "img": "monvieuxgrimoire/mvg-mobile2" },
+      { "title": "Modifier", "img": "monvieuxgrimoire/mvg-mobile2" }
+    ],
+    "keywords": "Backend,Node.JS,Express,MongoDB",
+    "description": "Texte à écrire pour chaque élément qui devra décrire le projet, les compétences acquises et les éventuelles difficultés rencontrées lors du codage",
+    "skills": [
+      "Implémenter un modèle logique de données conformément à la réglementation",
+      "Stocker des données de manière sécurisée",
+      "Mettre en oeuvre des opérations CRUD de manière sécurisée"
+    ],
+    "comments": [
+      "Avec ce projet 7 de la formation OpenClassRooms de développeur web nous voilà arrivés dans le développement d'une API complète. L'acquisition des compétences associées est venue compléter le travail réalisé précédemment sur React et m'a donnera la possibilité de coder un site de A à Z en Javascript et adoptant une solution MERN (MongoDB, Express, React, Node)",
+      "Pour cela il m'a été nécessaire d'être méthodique et précis dans mon approche. Rien ne doit être laissé au hasard afin de garantir la sécurisation des données et des routes sur lesquelles elles transitent. En effet, la réglementation impose le respect de normes strictes pour protéger les données utilisateur qui doivent impérativement rester confidentielles sans parler des autres dégâts potentiels que peuvent engendrer les intrusions.",
+      "Parmi les quelques difficultés rencontrées, je citerais la syntaxe assez particulière propre à Node et Express que la pratique et la répétition m'ont permis d'intégrer."
+    ],
+    "code": "https://github.com/Paskri/OCR---MonVieuxGrimoire",
+    "demo": ""
+  }
+]

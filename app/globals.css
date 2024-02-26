@@ -1,6 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@font-face {
+  font-family: 'Oswald';
+  src: url('../src/assets/fonts/Oswald-VariableFont_wght.woff2') format('woff2');
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -16,12 +17,210 @@
   }
 }
 
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* Set core body defaults */
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  margin: auto;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'calibri', sans-serif;
+  font-size: 1.25rem;
+  background-color: rgb(7, 10, 17, 0.05);
+  color: black;
+  letter-spacing: -1px;
+  font-weight: 370;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+main {
+  flex-grow: 1;
+  background-color: white;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+section {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-top: 50px;
+  /*padding: 0 20px;*/
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0px;
+  text-align: center;
+  color: black;
+}
+h1 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 2rem;
+  font-weight: 300;
+  opacity: 0.8;
+}
+h2 {
+  margin-bottom: 35px;
+  font-size: 2.2rem;
+}
+h3 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+@media screen and (min-width: 680px) {
+  body {
+    font-size: 1.35rem;
+  }
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 200;
+  }
+  h2 {
+    font-size: 2.2rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 890px) {
+  body {
+    font-size: 1.5rem;
+  }
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 100;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 2rem;
+    font-weight: 300;
+  }
+}
+.error-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  color: tomato;
+}
+
+/* block's animations */
+.reveal-up [class*='reveal-'] {
+  opacity: 0.01 !important;
+  transform: translateY(250px) !important;
+  transition: 0s !important;
+  position: relative;
+  z-index: 1;
+}
+.reveal-left [class*='reveal-'] {
+  opacity: 0.01 !important;
+  transform: translateX(250px) !important;
+  transition: 0s !important;
+  position: relative;
+  z-index: 1;
+}
+.reveal-right [class*='reveal-'] {
+  opacity: 0.01 !important;
+  transform: translateX(-250px) !important;
+  transition: 0s !important;
+  position: relative;
+  z-index: 1;
+}
+
+.reveal-loaded [class*='reveal-'] {
+  transition: 1s cubic-bezier(0.5, 0, 0, 1);
+  position: relative;
+  z-index: 1;
+}
+
+.reveal-loaded .reveal-2 {
+  transition-delay: 0.1s;
+}
+
+.reveal-loaded .reveal-3 {
+  transition-delay: 0.2s;
+}
+
+.reveal-loaded .reveal-4 {
+  transition-delay: 0.3s;
+}
+
+.reveal-loaded .reveal-5 {
+  transition-delay: 0.4s;
+}
+
+.reveal-loaded .reveal-6 {
+  transition-delay: 0.5s;
 }

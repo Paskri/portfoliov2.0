@@ -1,0 +1,47 @@
+.typewriter-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  position: absolute;
+  width: 100vw;
+  max-width: 1440px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 5vw;
+  justify-content: center;
+}
+.typewriter-container p {
+  font-size: 1.2rem;
+}
+.typewriter {
+  width: 100%;
+  z-index: 100;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.typewriter-content {
+  display: block;
+  width: 100%;
+}
+.typewriter h1 {
+  display: inline;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+@media screen and (min-width: 750px) {
+  .typewriter-container {
+    padding-left: 10vw;
+  }
+  .typewriter h1,
+  .typewriter {
+    font-size: 3.5rem;
+  }
+  .typewriter-container p {
+    font-size: 1.8rem;
+  }
+}

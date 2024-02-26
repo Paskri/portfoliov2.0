@@ -1,0 +1,22 @@
+.mouse-tracker {
+  height: 500px;
+  width: 100%;
+}
+
+#container {
+  perspective: 25px;
+  width: fit-content;
+  height: 500px;
+  margin: 0 auto;
+}
+
+#inner {
+  width: 20em;
+  height: 18em;
+  background-color: white;
+  box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s;
+  -webkit-transition: transform 0.5s;
+  -moz-transition: transform 0.5s;
+  -o-transition: transform 0.5s;
+}

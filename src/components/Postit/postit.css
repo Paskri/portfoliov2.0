@@ -1,0 +1,22 @@
+.post-it {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 1.25rem;
+  letter-spacing: 0px;
+  position: absolute;
+  top: -7px;
+  left: -20px;
+  transform: rotate(-20deg);
+  background-color: #ffa;
+  color: black;
+  padding: 5px 30px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 5px black;
+  min-width: 180px;
+  text-align: center;
+}
+@media screen and (min-width: 880px) {
+  .post-it {
+    font-size: 1.5rem;
+  }
+}

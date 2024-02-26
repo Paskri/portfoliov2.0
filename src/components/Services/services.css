@@ -1,0 +1,130 @@
+.services {
+  margin: 0;
+  background-color: #e2f2ff;
+  padding: 20px 40px 30px 40px;
+}
+.svg-icons {
+  display: inline-block;
+  position: absolute;
+  top: 25px;
+  left: 20px;
+  margin-right: 15px;
+}
+.services-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+.service-container {
+  width: 100%;
+
+  z-index: 9;
+  border-radius: 10px;
+  height: 100%;
+}
+.service-content {
+  position: relative;
+  background: linear-gradient(#484ea8, #21549c);
+  border-radius: 10px 100px 10px 10px;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  color: #ffffff;
+  padding: 5%;
+  box-shadow: 3px 3px 7px black;
+}
+.service-content h3 {
+  color: white;
+}
+@media screen and (min-width: 880px) {
+  .services-container {
+    flex-direction: row;
+    margin: 0;
+  }
+}
+.service-text {
+  padding: 15px;
+}
+.service-text p {
+  font-weight: 500;
+}
+.service-text ul {
+  margin-left: 0;
+}
+.service-text li {
+  list-style-type: disclosure-closed;
+}
+.title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  top: 0;
+  left: 0;
+  content: ' ';
+  width: 100%;
+  height: 25%;
+  border-radius: 10px 10px 0 0;
+}
+.services .boosted-text {
+  margin-top: 0;
+  background-color: transparent;
+}
+.services .boosted-text a {
+  background-color: #8d13af;
+  border-color: #8d13af;
+  text-align: center;
+}
+.services .boosted-text a:hover {
+  background-color: white;
+  color: #8d13af;
+}
+
+/* modal content */
+.tarifs-line {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tarifs-line span {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+}
+.tarifs-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.tarifs-modal p {
+  margin: 60px 0 25px 0;
+}
+.tarifs-modal .modal-middle {
+  flex-grow: 1;
+}
+.tarifs-modal .modal-middle a {
+  font-size: 1.4rem;
+}
+.tarifs-modal.modal-middle .modal-bottom {
+  margin: 30px;
+  text-align: center;
+}
+.tarifs-modal .modal-middle h2 {
+  margin: 0;
+}
+.tarifs-modal .modal-middle h3 {
+  margin: 25px 0 5px 0;
+}
+@media screen and (min-width: 550px) {
+  .tarifs-line {
+    width: 50%;
+  }
+  .modal-middle a {
+    font-size: 2rem;
+  }
+}
