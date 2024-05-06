@@ -4,7 +4,6 @@ import Image from 'next/image'
 
 export default function Mobile(props) {
   const { datas, title } = props
-  console.log(datas)
   const [index, setIndex] = useState(0)
   const [image, setImage] = useState(datas[index].img)
   const frameRef = useRef(null)
