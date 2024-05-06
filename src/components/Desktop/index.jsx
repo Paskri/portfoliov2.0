@@ -5,15 +5,13 @@ import Image from 'next/image'
 export default function Mobile(props) {
   const { datas, title } = props
   const [index, setIndex] = useState(0)
-  const [image, setImage] = useState(
-    require('../../../public/img/' + datas[index].img + '.webp')
-  )
+  const [image, setImage] = useState(datas[index].img)
   const frameRef = useRef(null)
 
   // récupère l'image sous forme d'objet avec tous ses attributs
   // recalcule si une des dépendances change (meilleurs perfs)
   useEffect(() => {
-    setImage(require('../../../public/img/' + datas[index].img + '.webp'))
+    setImage(datas[index].img)
   }, [datas, index, image, setImage])
 
   useEffect(() => {
@@ -35,7 +33,7 @@ export default function Mobile(props) {
       setIndex((i) => i - 1)
     }
   }
-
+  const [height, setHeight] = useState(0)
   return (
     <>
       {!datas[0] ? (
@@ -44,12 +42,14 @@ export default function Mobile(props) {
         <div className="desktop">
           <div className="desktop-frame">
             <div className="desktop-screen" ref={frameRef}>
+              {/* image ? image.default.height : */}
               <Image
-                width={680}
-                height={image ? image.default.height : 0}
+                onLoad={(e) => setHeight((e.target.naturalHeight * 680) / 700)}
                 className="work-desktop"
-                src={image.default.src} //
+                src={image.replace('-scaled', '')}
                 alt={`${title} desktop ${index} screenshot`}
+                width={680}
+                height={height}
               />
             </div>
             <div className="desktop-keyboard"></div>

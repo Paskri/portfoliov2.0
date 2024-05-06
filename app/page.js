@@ -18,12 +18,11 @@ const navLinks = [
   { 'href': 'contact', 'txt': 'Contact' },
 ]
 
-
 export default async function Home() {
 
-  const { data: works, error: worksError, loading: worksLoading } = await serverFetch('https://api.krieg.fr/api/works')
+  //const { data: works, error: worksError, loading: worksLoading } = await serverFetch('https://api.krieg.fr/wp-json/wp/v2/project')
 
-  const { data: skills, error: skillsError, loading: skillsLoading } = await serverFetch('https://api.krieg.fr/api/skills')
+  //const { data: skills, error: skillsError, loading: skillsLoading } = await serverFetch('https://api.krieg.fr/wp-json/wp/v2/skill')
 
   return (
     <>
@@ -36,11 +35,16 @@ export default async function Home() {
         <Human />
         <Booster />
         <Services />
-        <Skills skills={skills} error={skillsError} loading={skillsLoading} />
-        <Works works={works} error={worksError} isLoading={worksLoading} />
+        <Skills />
+        <Works />
         <Contact />
       </main>
       <Footer navLinks={navLinks} />
     </>
   )
 }
+
+/*
+skills={skills} error={skillsError} loading={skillsLoading}
+works={works} error={worksError} isLoading={worksLoading}
+*/

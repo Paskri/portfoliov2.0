@@ -61,6 +61,8 @@ export default function Work(props) {
   const [reveal, setReveal] = useState('')
   const divAnimate = useRef(null)
   const [loaded, setLoaded] = useState(false)
+  const [desktop, setDesktop] = useState([])
+  const [mobile, setMobile] = useState([])
 
   //toggle background filter
   function handleMouseEnter(event) {
@@ -88,7 +90,8 @@ export default function Work(props) {
 
   //manage mobile display
   let middleClass = ''
-  if (!work.mobile[0]) {
+
+  if (!mobile[0]) {
     middleClass = ' center'
   }
 
@@ -141,7 +144,37 @@ export default function Work(props) {
       }
     }
   }, [divAnimate, loaded])
+  //generating project datas
+  useEffect(() => {
+    if (work) {
+      const desktopDatas = Object.entries(work.acf_data)
+        .filter(
+          ([key, value]) => key.startsWith('desk_img_title') && value !== ''
+        )
+        .map(([key, title]) => {
+          const id = key.split('_').pop()
+          return {
+            title: title,
+            img: work.acf_data[`desk_img_${id}`],
+          }
+        })
+      setDesktop(desktopDatas)
 
+      const mobileDatas = Object.entries(work.acf_data)
+        .filter(
+          ([key, value]) => key.startsWith('mob_img_title') && value !== ''
+        )
+        .map(([key, title]) => {
+          const id = key.split('_').pop()
+          return {
+            title: title,
+            img: work.acf_data[`mob_img_${id}`],
+          }
+        })
+      setMobile(mobileDatas)
+    }
+  }, [work])
+  //console.log('Work in Work : ', work)
   return (
     <>
       {loading ? (
@@ -154,19 +187,19 @@ export default function Work(props) {
                 className="wb-img"
                 width={420}
                 height={278}
-                src={`/img/${work.background}.webp`}
-                alt={`${work.title} background`}
+                src={work.acf_data.background}
+                alt={`${work.acf_data.title} background`}
               />
             </div>
             <div className="logo-container">
               <Image
                 className="work-logo"
-                src={`/img/${work.logo}.webp`}
-                alt={`${work.title} logo`}
+                src={work.acf_data.logo}
+                alt={`${work.acf_data.title} logo`}
                 width={420}
                 height={278}
               />
-              <div className="tags">{work.tags}</div>
+              <div className="tags">{work.acf_data.tags}</div>
             </div>
             <div className="rain-container">
               <Image src={rain} alt="rain" width="420" height="278" />
@@ -184,7 +217,7 @@ export default function Work(props) {
               isOpen={isOpen}
               onRequestClose={toggleModal}
               style={customStyle}
-              contentLabel={`${work.title} modal`}
+              contentLabel={`${work.acf_data.title} modal`}
             >
               <div className="modal-top">
                 <Image
@@ -198,45 +231,56 @@ export default function Work(props) {
                 <div className="modal-logo-title">
                   <Image
                     className="work-logo"
-                    src={`/img/${work.logo}-modal.webp`}
-                    alt={`${work.title} logo`}
-                    width={work.logoSize[0]}
-                    height={work.logoSize[1]}
+                    src={work.acf_data.logo_modal}
+                    alt={`${work.acf_data.title}-logo`}
+                    width={work.acf_data.logo_width}
+                    height={60}
                   />
                 </div>
                 <div className="modal-middle-container">
                   <div className="modal-middle-left">
                     <h3>La mission :</h3>
-                    {work.projectTitle}
+                    {work.acf_data.description}
                     <h3>Compétences mises en œuvre :</h3>
                     <ul>
-                      {work.skills.map((skill, index) => (
-                        <li key={`skill-${index}`}>{skill}</li>
-                      ))}
+                      {work && work.acf_data && work.acf_data.skills
+                        ? JSON.parse(work.acf_data.skills).map(
+                            (skill, index) => (
+                              <li key={`skill-${index}`}>{skill}</li>
+                            )
+                          )
+                        : ''}
                     </ul>
                     <h3>Commentaires : </h3>
-                    {work.comments.map((comment, index) => (
-                      <p key={`comment-${index}`}>{comment}</p>
-                    ))}
-                    <Tags tags={work.keywords} />
+                    {work.acf_data.comments
+                      ? JSON.parse(work.acf_data.comments).map(
+                          (comment, index) => (
+                            <p key={`comment-${index}`}>{comment}</p>
+                          )
+                        )
+                      : ''}
+                    <Tags tags={work.acf_data.keywords} />
                   </div>
 
                   <div className="modal-middle-right">
-                    {work.code ? (
+                    {work.acf_data.code ? (
                       <div className="git-container">
                         <p>Consulter le code :</p>
-                        <SocialLink link={work.code} image={gitImage} />
+                        <SocialLink
+                          link={work.acf_data.code}
+                          image={gitImage}
+                        />
                       </div>
                     ) : (
                       ''
                     )}
 
-                    {work.demo ? (
+                    {work.acf_data.demo ? (
                       <div className="demo-container">
                         <p>Démo du site :</p>
                         <a
                           className="demo-link"
-                          href={work.demo}
+                          href={work.acf_data.demo}
                           target="about:blank"
                         >
                           Demo
@@ -249,12 +293,12 @@ export default function Work(props) {
                 </div>
               </div>
               <div className={`modal-bottom${middleClass}`}>
-                {!work.mobile[0] ? (
+                {!mobile[0] ? (
                   ''
                 ) : (
-                  <Mobile datas={work.mobile} title={work.title} />
+                  <Mobile datas={mobile} title={work.acf_data.title} />
                 )}
-                <Desktop datas={work.desktop} title={work.title} />
+                <Desktop datas={desktop} title={work.acf_data.title} />
               </div>
             </ReactModal>
           </div>

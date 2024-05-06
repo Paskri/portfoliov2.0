@@ -9,18 +9,12 @@ import useSWR from 'swr'
 
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
-export default function Works({ works, error, isLoading }) {
-  const {
-    data,
-    error: swrError,
-    isLoading: swrIsLoading,
-  } = useSWR('https://api.krieg.fr/api/works', fetcher)
-  let reversedWorks = []
-  if (data && data !== works) {
-    reversedWorks = data ? data.slice().reverse() : []
-  } else {
-    reversedWorks = works ? works.slice().reverse() : []
-  }
+export default function Works() {
+  const { data, error, isLoading } = useSWR(
+    'https://api.krieg.fr/wp-json/wp/v2/project?per_page=100',
+    fetcher
+  )
+  //const reversedWorks = data ? data.slice().reverse() : []
 
   return (
     <>
@@ -33,7 +27,7 @@ export default function Works({ works, error, isLoading }) {
         <div className="works-container">
           {isLoading
             ? ''
-            : reversedWorks.map((work, index) => (
+            : data.map((work, index) => (
                 <Work
                   key={`work-${work.id}`}
                   loading={isLoading}

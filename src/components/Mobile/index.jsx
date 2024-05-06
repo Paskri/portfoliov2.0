@@ -4,14 +4,13 @@ import Image from 'next/image'
 
 export default function Mobile(props) {
   const { datas, title } = props
+  console.log(datas)
   const [index, setIndex] = useState(0)
-  const [image, setImage] = useState(
-    require(`../../../public/img/${datas[index].img}.webp`)
-  )
+  const [image, setImage] = useState(datas[index].img)
   const frameRef = useRef(null)
 
   useEffect(() => {
-    setImage(require(`../../../public/img/${datas[index].img}.webp`))
+    setImage(datas[index].img)
   }, [datas, index, image, setImage])
 
   useEffect(() => {
@@ -34,7 +33,7 @@ export default function Mobile(props) {
       setIndex((i) => i - 1)
     }
   }
-
+  const [height, setHeight] = useState(0)
   return (
     <>
       {!datas[0] ? (
@@ -43,11 +42,16 @@ export default function Mobile(props) {
         <div className="mobile">
           <div className="mobile-frame">
             <div className="mobile-screen" ref={frameRef}>
+              {/*image ? image.default.height :*/}
               <Image
+                onLoad={(e) => {
+                  //console.log('natural height : ', e.target)
+                  setHeight(e.target.naturalHeight)
+                }}
                 width={260}
-                height={image ? image.default.height : 0}
+                height={height}
                 className="work-mobile"
-                src={image.default.src}
+                src={image.replace('-scaled', '')}
                 alt={`${title} mobile ${index} screenshot`}
               />
             </div>

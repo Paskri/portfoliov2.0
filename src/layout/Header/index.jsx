@@ -4,6 +4,7 @@ import './header.css'
 import logo from '../../assets/logo-pk.webp'
 import Image from 'next/image'
 import ReactModal from 'react-modal'
+
 ReactModal.setAppElement('body')
 const customStyle = {
   overlay: {
@@ -68,6 +69,43 @@ export default function Header(props) {
     }
   }, [activeLink, position, setPosition])
 
+  //processing animation effects
+  useEffect(() => {
+    const handleIntersect = function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (entry.intersectionRatio > ratio) {
+          entry.target.classList.remove(
+            'reveal-up',
+            'reveal-left',
+            'reveal-right'
+          )
+          observer.unobserve(entry.target)
+        }
+      })
+    }
+
+    //observer
+    const ratio = 0.1
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: ratio,
+    }
+    const observer = new IntersectionObserver(handleIntersect, options)
+    const revealables = document.querySelectorAll(
+      '.reveal-up, .reveal-left, .reveal-right'
+    )
+    revealables.forEach(function (node) {
+      node.classList.add('reveal-loaded')
+      observer.observe(node)
+    })
+
+    // Clean up the observer
+    return () => {
+      observer.disconnect()
+    }
+  }, [])
+
   // processing nav click
   const handleNavLinkClick = (event, targetId, modalMode) => {
     event.preventDefault()
@@ -92,41 +130,6 @@ export default function Header(props) {
       behavior: 'smooth',
     })
   }
-  //processing animation effects
-  useEffect(() => {
-    const ratio = 0.1
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: ratio,
-    }
-
-    const handleIntersect = function (entries, observer) {
-      entries.forEach(function (entry) {
-        if (entry.intersectionRatio > ratio) {
-          entry.target.classList.remove(
-            'reveal-up',
-            'reveal-left',
-            'reveal-right'
-          )
-          observer.unobserve(entry.target)
-        }
-      })
-    }
-
-    const observer = new IntersectionObserver(handleIntersect, options)
-    document
-      .querySelectorAll('.reveal-up, .reveal-left, .reveal-right')
-      .forEach(function (node) {
-        node.classList.add('reveal-loaded')
-        observer.observe(node)
-      })
-
-    // Clean up the observer
-    return () => {
-      observer.disconnect()
-    }
-  }, [])
 
   const toggleModal = useCallback(
     (e) => {
@@ -143,7 +146,6 @@ export default function Header(props) {
 
   //handling modal close on window resize
   const [screenWidth, setScreenWidth] = useState(0)
-
   useEffect(() => {
     let timeoutId = null
 
