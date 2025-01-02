@@ -1,11 +1,13 @@
 .mobile {
   display: flex;
   flex-direction: column;
+  width: 80vw;
+  align-items: center;
 }
 .mobile-nav {
   display: flex;
   justify-content: space-between;
-  width: 75%;
+  width: 100%;
   min-height: 42px;
   margin: 0 auto 10px auto;
 }
@@ -61,6 +63,12 @@
   overflow: auto;
 }
 
+.work-mobile {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
 @media screen and (min-width: 1050px) {
   .mobile-frame {
     width: 30vw;
@@ -69,5 +77,9 @@
     max-height: 560px;
     border-bottom: 2.5vw solid grey;
     border-top: 2.5vw solid grey;
+  }
+  .mobile-nav {
+    width: 30vw;
+    max-width: 290px;
   }
 }

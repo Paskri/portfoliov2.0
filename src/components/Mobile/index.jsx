@@ -48,7 +48,7 @@ export default function Mobile(props) {
                   setHeight(e.target.naturalHeight)
                 }}
                 width={260}
-                height={height}
+                height={500}
                 className="work-mobile"
                 src={image.replace('-scaled', '')}
                 alt={`${title} mobile ${index} screenshot`}

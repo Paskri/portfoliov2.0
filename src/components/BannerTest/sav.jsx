@@ -18,11 +18,6 @@ export default function BannerTest(props) {
   const [mouseX, setMouseX] = useState(0)
   const [mouseY, setMouseY] = useState(0)
 
-  const [touchPoint, setTouchPoint] = useState(null)
-  const [touchStart, setTouchStart] = useState(null)
-  const [touchEnd, setTouchEnd] = useState(null)
-  const [dec, setDec] = useState({ decX: 1, decY: 1 })
-
   const [midX, setMidX] = useState(0)
   const [midY, setMidY] = useState(0)
 
@@ -41,12 +36,12 @@ export default function BannerTest(props) {
   const bannerInner = useRef(null)
 
   //checking screen size
-  //const checkSmallScreen = (display) => {
-  //  display.innerWidth < 650 ? setSmallScreen(true) : setSmallScreen(false)
-  //}
-  //useEffect(() => {
-  //  checkSmallScreen(window)
-  //}, [smallScreen])
+  const checkSmallScreen = (display) => {
+    display.innerWidth < 650 ? setSmallScreen(true) : setSmallScreen(false)
+  }
+  useEffect(() => {
+    checkSmallScreen(window)
+  }, [smallScreen])
 
   //initializing
   const checkInitialMousePosition = (e) => {
@@ -78,7 +73,7 @@ export default function BannerTest(props) {
 
   const handleResizing = useCallback(
     (e) => {
-      //checkSmallScreen(e.target)
+      checkSmallScreen(e.target)
       const btContainer = document.querySelector('.banner-container')
       const banner = btContainer.getBoundingClientRect()
       setOrigin(banner)
@@ -127,13 +122,11 @@ export default function BannerTest(props) {
       letterRef.current.style.left = `${letterX}px`
       letterRef.current.style.top = `${letterY}px`
     }
-    let vX = ((letterX - midX) / midX).toFixed(1)
-    let vY = ((letterY - midY) / midY).toFixed(1)
+    let vX = (letterX - midX) / midX
+    let vY = (letterY - midY) / midY
 
     let decX = vX * 10
     let decY = vY * 10 * -1
-    setDec({ decX: vX, decY: vY })
-
     //banner is fixed
     //level1 (Front)
     let translateX = vX * 50
@@ -158,7 +151,7 @@ export default function BannerTest(props) {
     },
     [animateFrame, update]
   )
-  /* ************* Mouse Handling ************* */
+
   const handleMouseEnter = useCallback(() => {
     //clearing timer for delayed actions
     if (timerId) {
@@ -198,110 +191,24 @@ export default function BannerTest(props) {
     //letterRef.current.style.top = `${midY}px`
   }, [delayedActions])
 
-  /* ************* Touch handling ************* */
-  const handleTouchStart = useCallback(
-    (e) => {
-      e.preventDefault()
-      const touch = e.touches[0]
-      setTouchPoint({ touchX: touch.clientX, touchY: touch.clientY })
-      setTouchStart({ touchX: touch.clientX, touchY: touch.clientY })
-
-      setMouseX(Math.round(touch.clientX))
-      setMouseY(Math.round(touch.clientY))
-      handleMouseEnter() // Active les animations comme pour la souris
-    },
-    [handleMouseEnter]
-  )
-
-  const handleTouchMove = useCallback(
-    (e) => {
-      e.preventDefault()
-      const touch = e.touches[0]
-
-      setTouchPoint({ touchX: touch.clientX, touchY: touch.clientY })
-
-      updateMouse({
-        clientX: touch.clientX,
-        clientY: touch.clientY,
-      })
-    },
-    [updateMouse]
-  )
-
-  const handleTouchEnd = useCallback(
-    (e) => {
-      handleMouseLeave()
-      const touch = e.changedTouches[0]
-      setTouchEnd({ touchX: touch.clientX, touchY: touch.clientY })
-
-      setTouchPoint(null)
-    },
-    [handleMouseLeave]
-  )
-  // Checking kind of move and move screen if deltaY is ok
   useEffect(() => {
-    if (touchStart && touchEnd) {
-      console.log('Start at :', touchStart)
-      console.log('End at :', touchEnd)
-      const deltaX = touchStart.touchX - touchEnd.touchX
-      const deltaY = touchStart.touchY - touchEnd.touchY
-      console.log('deltaX: ', deltaX, 'deltaY: ', deltaY)
-      if (deltaY > 0 && deltaY > deltaX && deltaX > -20 && deltaX < 20) {
-        console.log("let's move !!!")
-        const targetElement = document.getElementById('about')
-        let headerHeight = 0
-        if (window.innerWidth <= 435) {
-          headerHeight = 100
-        } else if (window.innerWidth <= 850) {
-          headerHeight = 65
-        } else {
-          headerHeight = 80
-        }
-        const offset = targetElement.offsetTop - headerHeight
+    if (!smallScreen) {
+      const btContainer = document.querySelector('.banner-container')
 
-        window.scrollTo({
-          top: offset,
-          behavior: 'smooth',
-        })
-        setTouchStart(null)
-        setTouchEnd(null)
-      }
-    }
-  }, [touchStart, touchEnd])
-
-  useEffect(() => {
-    const btContainer = document.querySelector('.banner-container')
-
-    const isTouchDevice = 'ontouchstart' in window
-
-    if (btContainer) {
-      if (!isTouchDevice) {
-        // Écrans non tactiles
-        console.log('Not a touch device')
-        btContainer.addEventListener('mouseenter', handleMouseEnter)
-        btContainer.addEventListener('mousemove', handleMouseMove)
-        btContainer.addEventListener('mouseleave', handleMouseLeave)
-      } else if (isTouchDevice) {
-        // Écrans tactiles
-        console.log('Is a touch device')
-        btContainer.addEventListener('touchstart', handleTouchStart)
-        btContainer.addEventListener('touchmove', handleTouchMove)
-        btContainer.addEventListener('touchend', handleTouchEnd)
-      }
+      btContainer.addEventListener('mouseenter', handleMouseEnter)
+      btContainer.addEventListener('mousemove', handleMouseMove)
+      btContainer.addEventListener('mouseleave', handleMouseLeave)
 
       if (trigger) {
         animateFrame.current = requestAnimationFrame(animate)
       } else {
         cancelAnimationFrame(animateFrame.current)
       }
+
       return () => {
-        // Nettoyage des listeners
         btContainer.removeEventListener('mouseenter', handleMouseEnter)
         btContainer.removeEventListener('mousemove', handleMouseMove)
         btContainer.removeEventListener('mouseleave', handleMouseLeave)
-        btContainer.removeEventListener('touchstart', handleMouseEnter)
-        btContainer.removeEventListener('touchmove', handleMouseMove)
-        btContainer.removeEventListener('touchend', handleMouseLeave)
         cancelAnimationFrame(animateFrame.current)
       }
     }
@@ -309,9 +216,6 @@ export default function BannerTest(props) {
     handleMouseEnter,
     handleMouseLeave,
     handleMouseMove,
-    handleTouchEnd,
-    handleTouchMove,
-    handleTouchStart,
     animate,
     animateFrame,
     trigger,
@@ -357,7 +261,7 @@ export default function BannerTest(props) {
                   src={element1}
                   alt={`Pascal Krieg illustrated`}
                   width={600}
-                  height={468}
+                  height={480}
                   priority={true}
                 />
                 <Image
@@ -366,7 +270,7 @@ export default function BannerTest(props) {
                   src={element2}
                   alt={`Pascal Krieg illustrated`}
                   width={600}
-                  height={468}
+                  height={480}
                   priority={true}
                 />
                 <Image
@@ -375,7 +279,7 @@ export default function BannerTest(props) {
                   src={element3}
                   alt={`Pascal Krieg illustrated`}
                   width={600}
-                  height={468}
+                  height={480}
                   priority={true}
                 />
               </>

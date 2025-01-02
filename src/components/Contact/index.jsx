@@ -8,6 +8,7 @@ import './contact.css'
 export default function Contact(user, validate) {
   // watch, formState, reset
   const [successMessage, setSuccessMessage] = useState('')
+  const [error, setError] = useState('')
 
   const schema = yup
     .object({
@@ -34,7 +35,8 @@ export default function Contact(user, validate) {
   })
 
   const onSubmit = async (data) => {
-    fetch('https://formsubmit.co/ajax/81fcdaf394195eea7a58b0db7f5c7fb9', {
+    const apiMailServerUrl = process.env.NEXT_PUBLIC_MAIL_URL
+    fetch(apiMailServerUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -49,7 +51,10 @@ export default function Contact(user, validate) {
           'Votre demande à bien été envoyé, vous recevrez une réponse au plus vite.'
         )
       })
-      .catch((error) => console.log(error))
+      .catch((error) => {
+        console.log(error)
+        setError(`Une erreur s'est produite. Veuillez réessayer plus tard`)
+      })
   }
   return (
     <section id="contact" className="section">

@@ -7,36 +7,56 @@ const img = require('../public/logo1200x630.png')
 export const metadata = {
   title: 'Pascal Krieg, Développeur Web',
   description: 'Developpeur Web au K par K',
+  keywords: [
+    'développeur web',
+    'création site internet',
+    'optimisation site web',
+    'refonte site internet',
+    'maintenance site web',
+    'développeur freelance',
+    'TPE PME',
+    'artisan',
+    'commerce local',
+    'SEO',
+    'accessibilité web',
+    'performances web',
+    'WordPress',
+    'Next.js',
+    'Symfony',
+    'Strasbourg',
+    'développeur indépendant',
+    'site vitrine',
+    'site eCommerce',
+    'audit site internet',
+    'responsive design'
+  ],
+  metadataBase: new URL('https://krieg.fr'),
   twitter: {
     card: 'summary',
     title: 'Pascal Krieg, Développeur Web au K par K',
     description: 'Création, optimisation, refonte et maintenance de site internet. Pour TPE/PME, entrepreneurs, artisans, commerces locaux.',
     creator: '@pascalkrieg',
-    images: [`${img.default.src || ''}`],
+    images: '/krieg-og.png',
   },
   openGraph: {
     title: 'Pascal Krieg, Développeur Web au K par K',
     type: 'website',
-    description: 'Création, optimisation, refonte et maintenance de site internet. Pour TPE/PME, entrepreneurs, artisans, commerces locaux.',
+    description: 'Création, optimisation, refonte et maintenance de site internet sur Strasbourg et ses environs. Pour TPE/PME, entrepreneurs, artisans, commerces locaux.',
     url: 'https://krieg.fr',
     siteName: 'Pascal Krieg',
     images: [
       {
-        url: 'https://nextjs.org/og.png', // Must be an absolute URL
-        width: 800,
-        height: 600,
-      },
-      {
-        url: 'https://nextjs.org/og-alt.png', // Must be an absolute URL
-        width: 1800,
-        height: 1600,
-        alt: 'My custom alt',
+        url: '/krieg-og.png',
+        width: 1200,
+        height: 630,
+        alt: 'Pascal Krieg, Développeur au K par K, création, optimisation, refonte et maintenance de site internet.',
       },
     ],
-    locale: 'en_US',
+    locale: 'fr_FR',
     type: 'website',
   },
 }
+
 
 export default function RootLayout({ children }) {
   const jsonLd = {
@@ -44,7 +64,7 @@ export default function RootLayout({ children }) {
     "@type": "LocalBusiness",
     "name": "Pascal Krieg, Developpeur Web indépendant",
     "description": "Création de site internet, maintenance, correction de bug, ajout de fonctionnalités",
-    "image": ["", ""],
+    "image": ["https://krieg.fr/krieg-og.png"],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "26 rue César Julien",
@@ -81,6 +101,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <Script
+        id="pk-schema"
         async=""
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

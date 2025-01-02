@@ -136,8 +136,11 @@
   justify-content: center;
   margin: -30px 0 20px 0;
 }
-.modal-logo-title img {
-  height: 60px;
+.work-logo {
+  object-fit: cover;
+  width: 60%;
+  height: auto;
+  max-width: 400px;
 }
 .modal-middle-container {
   display: flex;

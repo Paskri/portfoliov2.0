@@ -19,11 +19,6 @@ const navLinks = [
 ]
 
 export default async function Home() {
-
-  //const { data: works, error: worksError, loading: worksLoading } = await serverFetch('https://api.krieg.fr/wp-json/wp/v2/project')
-
-  //const { data: skills, error: skillsError, loading: skillsLoading } = await serverFetch('https://api.krieg.fr/wp-json/wp/v2/skill')
-
   return (
     <>
       <Header navLinks={navLinks} />
@@ -43,8 +38,3 @@ export default async function Home() {
     </>
   )
 }
-
-/*
-skills={skills} error={skillsError} loading={skillsLoading}
-works={works} error={worksError} isLoading={worksLoading}
-*/

@@ -95,7 +95,7 @@ export default function Skills() {
             {Object.entries(blocs).map(([category, items]) => (
               <div className="skills-cat reveal-up" key={category}>
                 <h3 className="reveal-2">{category}</h3>
-                <ul className="cat-wrapper reveal-3">
+                <div className="cat-wrapper reveal-3">
                   {items.map((item) => {
                     return (
                       <SkillBar
@@ -107,7 +107,7 @@ export default function Skills() {
                       />
                     )
                   })}
-                </ul>
+                </div>
               </div>
             ))}
           </>

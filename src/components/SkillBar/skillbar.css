@@ -3,8 +3,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
 }
 .skill-logo {
   flex: none;
@@ -23,7 +23,7 @@
   flex: none;
   width: 100%;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   background-color: white;
 }
 .skill-bar-back {
@@ -48,16 +48,22 @@
 }
 @media screen and (min-width: 600px) {
   .skill-name {
+    font-size: 1.5rem;
   }
   .skill-logo,
   .skill-logo img {
     width: 75px;
     height: 75px;
   }
+
   .skill-bar-back {
     height: 24px;
   }
   .skill-bar-progress {
     line-height: inherit;
+  }
+  .skill-container {
+    width: 150px;
+    height: 150px;
   }
 }

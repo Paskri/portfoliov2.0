@@ -29,6 +29,8 @@
   transition: none;
   transition: 0.2s;
   opacity: 0.8;
+  height: 100%;
+  object-fit: cover;
 }
 .images-container .element1 {
   z-index: 2;
