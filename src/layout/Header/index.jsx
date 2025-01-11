@@ -222,9 +222,9 @@ export default function Header(props) {
         </div>
         <nav className="reveal-left desktop-header-nav">
           <ul className="reveal-2">
-            {navLinks.map((link) =>
-              isHomePage ? (
-                <li key={link.href}>
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                {isHomePage ? (
                   <a
                     className={`nav-link ${
                       activeLink === link.href ? 'active' : ''
@@ -236,9 +236,7 @@ export default function Header(props) {
                   >
                     {link.txt}
                   </a>
-                </li>
-              ) : (
-                <li key={link.href}>
+                ) : (
                   <Link
                     className={`nav-link ${
                       activeLink === link.href ? 'active' : ''
@@ -247,9 +245,9 @@ export default function Header(props) {
                   >
                     {link.txt}
                   </Link>
-                </li>
-              )
-            )}
+                )}
+              </li>
+            ))}
           </ul>
         </nav>
       </div>
@@ -265,17 +263,29 @@ export default function Header(props) {
           <ul className="reveal-2">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a
-                  className={`nav-link ${
-                    activeLink === `${link.href}` ? 'active' : ''
-                  }`}
-                  href={`#${link.href}`}
-                  onClick={(event) =>
-                    handleNavLinkClick(event, link.href, true)
-                  }
-                >
-                  {link.txt}
-                </a>
+                {isHomePage ? (
+                  <a
+                    className={`nav-link ${
+                      activeLink === `${link.href}` ? 'active' : ''
+                    }`}
+                    href={`#${link.href}`}
+                    onClick={(event) =>
+                      handleNavLinkClick(event, link.href, true)
+                    }
+                  >
+                    {link.txt}
+                  </a>
+                ) : (
+                  <Link
+                    className={`nav-link ${
+                      activeLink === link.href ? 'active' : ''
+                    }`}
+                    href={`/#${link.href}`}
+                    onClick={(e) => toggleModal(e)}
+                  >
+                    {link.txt}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
