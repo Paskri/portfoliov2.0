@@ -8,7 +8,7 @@ import Contact from '../../src/components/Contact'
 
 import cv from '../../public/cv-js.webp'
 import pk from '../../public/pk.webp'
-import Works from '../../src/components/Works'
+import Works from '../../src/components/NewWorks'
 import Footer from '../../src/layout/Footer'
 import Banner from '../../src/components/Banner'
 import BannerTest from '../../src/components/BannerTest'

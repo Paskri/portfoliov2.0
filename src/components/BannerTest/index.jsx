@@ -208,7 +208,7 @@ export default function BannerTest(props) {
 
       setMouseX(Math.round(touch.clientX))
       setMouseY(Math.round(touch.clientY))
-      handleMouseEnter() // Active les animations comme pour la souris
+      handleMouseEnter()
     },
     [handleMouseEnter]
   )
@@ -241,13 +241,9 @@ export default function BannerTest(props) {
   // Checking kind of move and move screen if deltaY is ok
   useEffect(() => {
     if (touchStart && touchEnd) {
-      console.log('Start at :', touchStart)
-      console.log('End at :', touchEnd)
       const deltaX = touchStart.touchX - touchEnd.touchX
       const deltaY = touchStart.touchY - touchEnd.touchY
-      console.log('deltaX: ', deltaX, 'deltaY: ', deltaY)
       if (deltaY > 0 && deltaY > deltaX && deltaX > -20 && deltaX < 20) {
-        console.log("let's move !!!")
         const targetElement = document.getElementById('about')
         let headerHeight = 0
         if (window.innerWidth <= 435) {
@@ -276,14 +272,10 @@ export default function BannerTest(props) {
 
     if (btContainer) {
       if (!isTouchDevice) {
-        // Écrans non tactiles
-        console.log('Not a touch device')
         btContainer.addEventListener('mouseenter', handleMouseEnter)
         btContainer.addEventListener('mousemove', handleMouseMove)
         btContainer.addEventListener('mouseleave', handleMouseLeave)
       } else if (isTouchDevice) {
-        // Écrans tactiles
-        console.log('Is a touch device')
         btContainer.addEventListener('touchstart', handleTouchStart)
         btContainer.addEventListener('touchmove', handleTouchMove)
         btContainer.addEventListener('touchend', handleTouchEnd)
@@ -295,7 +287,6 @@ export default function BannerTest(props) {
         cancelAnimationFrame(animateFrame.current)
       }
       return () => {
-        // Nettoyage des listeners
         btContainer.removeEventListener('mouseenter', handleMouseEnter)
         btContainer.removeEventListener('mousemove', handleMouseMove)
         btContainer.removeEventListener('mouseleave', handleMouseLeave)

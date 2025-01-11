@@ -1,0 +1,8 @@
+[
+  { "href": "about", "txt": "Qui suis-je ?" },
+  { "href": "booster", "txt": "Pour quoi ?" },
+  { "href": "services", "txt": "Services" },
+  { "href": "skills", "txt": "Compétences" },
+  { "href": "works", "txt": "Réalisations" },
+  { "href": "contact", "txt": "Contact" }
+]

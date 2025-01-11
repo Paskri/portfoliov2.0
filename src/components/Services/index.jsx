@@ -59,76 +59,78 @@ export default function Services() {
     <>
       <CurveUp color="#E2F2FF" />
       <section id="services" className="services">
-        <div className="reveal-up">
-          <h2 className="reveal-1">Mes services</h2>
-        </div>
-        <div className="services-container">
-          <div className="reveal-right block-content">
-            <div className="service-container reveal-2">
-              <div className="service-content">
-                <Postit text="Y a plus K" />
-                <h3>CRÉATION</h3>
-                <div className="service-text">
-                  <p>
-                    Création d&apos;une solution web sur mesure pour votre
-                    activité.
-                  </p>
-                  <ul>
-                    <li>Site one page</li>
-                    <li>Site vitrine</li>
-                    <li>Site eCommerce</li>
-                  </ul>
-                  <p>
-                    Réalisation fully responsive mobile first ou desktop first
-                  </p>
+        <div className="services-wrapper">
+          <div className="reveal-up">
+            <h2 className="reveal-1">Mes services</h2>
+          </div>
+          <div className="services-container">
+            <div className="reveal-right block-content">
+              <div className="service-container reveal-2">
+                <div className="service-content">
+                  <Postit text="Y a plus K" />
+                  <h3>CRÉATION</h3>
+                  <div className="service-text">
+                    <p>
+                      Création d&apos;une solution web sur mesure pour votre
+                      activité.
+                    </p>
+                    <ul>
+                      <li>Site one page</li>
+                      <li>Site vitrine</li>
+                      <li>Site eCommerce</li>
+                    </ul>
+                    <p>
+                      Réalisation fully responsive mobile first ou desktop first
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="reveal-up block-content">
-            <div className="service-container reveal-3">
-              <div className="service-content">
-                <Postit text="Au K ou" />
-                <h3>OPTIMISATION</h3>
+            <div className="reveal-up block-content">
+              <div className="service-container reveal-3">
+                <div className="service-content">
+                  <Postit text="Au K ou" />
+                  <h3>OPTIMISATION</h3>
 
-                <div className="service-text">
-                  <p>Parce que votre site mérite d&apos;être vu.</p>
-                  <ul>
-                    <li>Optimisation SEO, référencement</li>
-                    <li>Optimisation des performances techniques</li>
-                    <li>Optimisation de l&apos;accessibilité</li>
-                    <li>Bonnes pratiques</li>
-                  </ul>
-                  <p>Audit gratuit sur simple demande</p>
+                  <div className="service-text">
+                    <p>Parce que votre site mérite d&apos;être vu.</p>
+                    <ul>
+                      <li>Optimisation SEO, référencement</li>
+                      <li>Optimisation des performances techniques</li>
+                      <li>Optimisation de l&apos;accessibilité</li>
+                      <li>Bonnes pratiques</li>
+                    </ul>
+                    <p>Audit gratuit sur simple demande</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="reveal-left block-content">
+              <div className="service-container reveal-4">
+                <div className="service-content">
+                  <Postit text="En K de pépin" />
+                  <h3>MAINTENANCE</h3>
+                  <div className="service-text">
+                    <p>
+                      Restez à la page dans un monde en perpétuelle évolution.
+                    </p>
+                    <ul>
+                      <li>Maintenance corrective</li>
+                      <li>Ajout de fonctionnalités</li>
+                      <li>Mise à jour</li>
+                      <li>Sauvegardes</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="reveal-left block-content">
-            <div className="service-container reveal-4">
-              <div className="service-content">
-                <Postit text="En K de pépin" />
-                <h3>MAINTENANCE</h3>
-                <div className="service-text">
-                  <p>
-                    Restez à la page dans un monde en perpétuelle évolution.
-                  </p>
-                  <ul>
-                    <li>Maintenance corrective</li>
-                    <li>Ajout de fonctionnalités</li>
-                    <li>Mise à jour</li>
-                    <li>Sauvegardes</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/*<div className="boosted-text">
+          {/*<div className="boosted-text">
           <a href="#" onClick={toggleModal}>
             Consultez mes tarifs
           </a>
         </div>*/}
+        </div>
       </section>
       <CurveDown color="#E2F2FF" />
       <ReactModal

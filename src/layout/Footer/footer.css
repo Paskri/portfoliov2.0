@@ -2,6 +2,11 @@ footer {
   background-color: #161c23;
   color: white;
   width: 100%;
+  /*max-width: 1440px;
+  margin: 0 auto;*/
+}
+.footer-container {
+  width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   display: flex;
@@ -55,6 +60,7 @@ footer .social-link {
   margin-bottom: 15px;
   text-align: center;
 }
+
 @media screen and (min-width: 750px) {
   .column-1,
   .column-2,

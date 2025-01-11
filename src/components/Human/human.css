@@ -9,21 +9,19 @@
   margin-top: 30px;
   bottom: 0;
 }
-.bidon {
-  position: absolute;
-  top: -1px;
-  z-index: 0;
-  width: 100%;
-}
-.bidon.bottom {
-  bottom: -1px;
-  top: auto;
-}
 
 .human-container {
   margin: 0;
-  padding: 20px 40px 50px 40px;
+  width: 100%;
+  max-width: none;
+
   background-color: #e2f2ff;
+}
+.human-global-wrapper {
+  padding: 20px 40px 50px 40px;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
 }
 .human-wrapper {
   display: flex;

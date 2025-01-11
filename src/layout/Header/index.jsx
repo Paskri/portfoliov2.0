@@ -4,6 +4,7 @@ import './header.css'
 import logo from '../../assets/logo-pk.webp'
 import Image from 'next/image'
 import ReactModal from 'react-modal'
+import Link from 'next/link'
 
 ReactModal.setAppElement('body')
 const customStyle = {
@@ -40,6 +41,13 @@ export default function Header(props) {
   const [activeLink, setActiveLink] = useState('')
   const [position, setPosition] = useState(0)
   const [isOpen, setIsOpen] = useState(false)
+  const [isHomePage, setIsHomePage] = useState(true)
+
+  useEffect(() => {
+    if (window) {
+      setIsHomePage(window.location.pathname === '/')
+    }
+  }, [])
 
   //processing nav a effects
   useEffect(() => {
@@ -108,12 +116,15 @@ export default function Header(props) {
 
   // processing nav click
   const handleNavLinkClick = (event, targetId, modalMode) => {
+    //including nav from another page
+
     event.preventDefault()
     if (modalMode) {
       toggleModal(event)
       const navBtn = document.querySelector('.ham')
       navBtn.classList.toggle('active')
     }
+
     const targetElement = document.getElementById(targetId)
     let headerHeight = 0
     if (window.innerWidth <= 435) {
@@ -175,56 +186,73 @@ export default function Header(props) {
   //}
   return (
     <header>
-      <a className="logo reveal-right" href="/">
-        <Image
-          className="reveal-1"
-          src={logo}
-          width={275}
-          height={327}
-          alt="logo Pascal Krieg"
-          priority={true}
-        />
-      </a>
-      <div className="mobile-header-nav-btn reveal-left">
-        <svg
-          className="ham hamRotate ham8 reveal-2"
-          viewBox="0 0 100 100"
-          width={80}
-          onClick={(e) => {
-            const navBtn = document.querySelector('.ham')
-            navBtn.classList.toggle('active')
-            toggleModal(e)
-            // ouvrir modale
-          }}
-        >
-          <path
-            className="line top"
-            d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"
+      <div className="topbar">
+        <a className="logo reveal-right" href="/">
+          <Image
+            className="reveal-1"
+            src={logo}
+            width={275}
+            height={327}
+            alt="logo Pascal Krieg"
+            priority={true}
           />
-          <path className="line middle" d="m 30,50 h 40" />
-          <path
-            className="line bottom"
-            d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"
-          />
-        </svg>
+        </a>
+        <div className="mobile-header-nav-btn reveal-left">
+          <svg
+            className="ham hamRotate ham8 reveal-2"
+            viewBox="0 0 100 100"
+            width={80}
+            onClick={(e) => {
+              const navBtn = document.querySelector('.ham')
+              navBtn.classList.toggle('active')
+              toggleModal(e)
+              // ouvrir modale
+            }}
+          >
+            <path
+              className="line top"
+              d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"
+            />
+            <path className="line middle" d="m 30,50 h 40" />
+            <path
+              className="line bottom"
+              d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"
+            />
+          </svg>
+        </div>
+        <nav className="reveal-left desktop-header-nav">
+          <ul className="reveal-2">
+            {navLinks.map((link) =>
+              isHomePage ? (
+                <li key={link.href}>
+                  <a
+                    className={`nav-link ${
+                      activeLink === link.href ? 'active' : ''
+                    }`}
+                    href={`#${link.href}`}
+                    onClick={(event) =>
+                      handleNavLinkClick(event, link.href, false)
+                    }
+                  >
+                    {link.txt}
+                  </a>
+                </li>
+              ) : (
+                <li key={link.href}>
+                  <Link
+                    className={`nav-link ${
+                      activeLink === link.href ? 'active' : ''
+                    }`}
+                    href={`/#${link.href}`}
+                  >
+                    {link.txt}
+                  </Link>
+                </li>
+              )
+            )}
+          </ul>
+        </nav>
       </div>
-      <nav className="reveal-left desktop-header-nav">
-        <ul className="reveal-2">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                className={`nav-link ${
-                  activeLink === link.href ? 'active' : ''
-                }`}
-                href={`#${link.href}`}
-                onClick={(event) => handleNavLinkClick(event, link.href, false)}
-              >
-                {link.txt}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
       <ReactModal
         className="nav-modal"
         closeTimeoutMS={500}

@@ -1,4 +1,6 @@
 .services {
+  width: 100%;
+  max-width: none;
   margin: 0;
   background-color: #e2f2ff;
   padding: 20px 40px 30px 40px;
@@ -17,9 +19,13 @@
   justify-content: space-between;
   padding: 20px 0;
 }
+.services-wrapper {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
 .service-container {
   width: 100%;
-
   z-index: 9;
   border-radius: 10px;
   height: 100%;

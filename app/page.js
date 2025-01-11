@@ -3,7 +3,8 @@ import Booster from '../src/components/Booster'
 import Human from '../src/components/Human'
 import Services from '../src/components/Services'
 import Skills from '../src/components/Skills'
-import Works from '../src/components/Works'
+//import Works from '../src/components/Works'
+import NewWorks from '../src/components/NewWorks'
 import Contact from '../src/components/Contact'
 import Footer from '../src/layout/Footer'
 import BannerTest from '../src/components/BannerTest'
@@ -31,7 +32,7 @@ export default async function Home() {
         <Booster />
         <Services />
         <Skills />
-        <Works />
+        <NewWorks />
         <Contact />
       </main>
       <Footer navLinks={navLinks} />

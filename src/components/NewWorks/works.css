@@ -1,0 +1,26 @@
+.works-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.works {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  background-color: #e2f2ff;
+}
+.works-wrapper {
+  width: 100%;
+  max-width: 1496px;
+  margin: 0 auto;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white !important;
+  background-color: rgb(0, 0, 0, 0.6);
+  border: 1px solid rgb(0, 0, 0, 0.7);
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 10px;
+}

@@ -1,9 +1,22 @@
+'use client'
 import './credits.css'
-import Headerpage from '../../src/layout/Headerpage'
+//import Headerpage from '../../src/layout/Headerpage'
+import Footer from '../../src/layout/Footer'
+import Header from '../../src/layout/Header'
+
+const navLinks = [
+  { href: 'about', txt: 'Qui suis-je ?' },
+  { href: 'booster', txt: 'Pour quoi ?' },
+  { href: 'services', txt: 'Services' },
+  { href: 'skills', txt: 'Compétences' },
+  { href: 'works', txt: 'Réalisations' },
+  { href: 'contact', txt: 'Contact' },
+]
+
 export default function page() {
   return (
     <>
-      <Headerpage />
+      <Header navLinks={navLinks} />
       <main style={{ height: '100vh' }}>
         <h1>Crédits</h1>
         <p>Logo et germes d&apos;idées : Nicolas Peyraud</p>
@@ -19,6 +32,7 @@ export default function page() {
 
         <a href="/">Retour à l&apos;accueil</a>
       </main>
+      <Footer navLinks={navLinks} />
     </>
   )
 }

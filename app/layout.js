@@ -1,6 +1,6 @@
 import Script from 'next/script'
 import './globals.css'
-import Head from "next/head"
+//import Head from "next/head"
 
 const img = require('../public/logo1200x630.png')
 
